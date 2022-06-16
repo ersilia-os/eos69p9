@@ -132,7 +132,8 @@ def ssl_model_predict(data_file):
 
 if __name__ == '__main__':
     smiles_file = str(sys.argv[1])
+    results_file = str(sys.argv[2])
     print("Predicting Chemical toxicity using SSL-GCN Model")
     
     df_results = ssl_model_predict(smiles_file)
-    df_results.to_csv('results.csv', index=False)
+    df_results.to_csv(results_file, index=False)
