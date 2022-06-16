@@ -1,0 +1,23 @@
+{
+  "batch_size": 256,
+  "batchnorm": true,
+  "dropout": 0.1868235173132821,
+  "ema_const": 0.9165698421404915,
+  "gnn_hidden_feats": 256,
+  "lr": 0.0014395440225780426,
+  "max_ramp_ep": 15,
+  "mt_weight": 3.3499661342816704,
+  "noise_for_all": false,
+  "noise_sigma": 0.0348335727318532,
+  "num_gnn_layers": 6,
+  "patience": 30,
+  "predictor_hidden_feats": 128,
+  "residual": false,
+  "ul_batch_ratio": 2.0,
+  "weight_decay": 0.00027640369475494557,
+  "model": "GCN",
+  "n_tasks": 1,
+  "atom_featurizer_type": "canonical",
+  "bond_featurizer_type": "canonical",
+  "in_node_feats": 74
+}
