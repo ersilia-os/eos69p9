@@ -12,6 +12,14 @@ import shutil
 import sys
 from utils import init_featurizer,  load_dataset, get_self_configure, mkdir_p, collate_molgraphs, load_model, predict, data_unpack, load_ecfp_dataset
 
+ROOT = os.path.abspath(os.path.dirname(__file__))
+
+# remove init file from models folder, possibly created by bentoml # TODO check source of __init__.py
+_init_file = os.path.join(ROOT, "models", "__init__.py")
+if os.path.exists(_init_file):
+    os.remove(_init_file)
+
+    
 def predict_prob(args, exp_config, test_set):
     exp_config.update({
         'model': args['model'],
@@ -63,7 +71,7 @@ def tensor_to_list(prob_tensor):
 
 def ssl_model_predict(data_file):
     #data_folder = 'predict_data/'
-    root_model_folder = 'models/'
+    root_model_folder = os.path.join(ROOT, 'models/')
     model_files = os.listdir(root_model_folder)
     
     df_results = pd.read_csv(data_file, names=['SMILES'])
