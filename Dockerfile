@@ -3,7 +3,6 @@ MAINTAINER ersilia
 
 RUN conda install -c conda-forge rdkit=2020.09.1
 RUN conda install -c dglteam dgl=0.5.2
-RUN conda install -c dglteam dgllife=0.2.5
 
 RUN pip install scikit-learn==0.23.2
 RUN pip install pandas==1.2.3
