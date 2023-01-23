@@ -1,27 +1,40 @@
-# Chemical toxicity prediction based on semi-supervised learning and graph convolutional neural network
+# Toxicity prediction across the Tox21 panel with semi-supervised learning
 
-## Model Identifiers
-- Slug: ssl-gcn-tox21
-- Ersilia ID: eos69p9
-- Tags: 
+Toxicity prediction across the Tox21 panel from MoleculeNet, comprising 12 toxicity pathways. The model uses the Mean Teacher Semi-Supervised Learning (MT-SSL) approach to overcome the low number of data points experimentally annotated for toxicity tasks. For the MT-SSL, Tox21 (831 compounds and 12 different endpoints) was used as labeled data and a selection of 50K compounds from other MoleculeNet datasets was used as unlabeled data.
 
-## Model Description
-Compound toxicity prediction using graph convolutional neural network (GCN) and semi-supervised learning (SSL). Mean Teacher as the SSL algorithm is used to improve the prediction performance of GCN on 12 toxicity prediction tasks from the Tox21 dataset.
-- Input: SMILES
-- Output: ROC-AUC score	Model performance score
-- Model Type: Classification
-- Mode of training: Pretrained
-- Training data: 58,358	(https://github.com/chen709847237/SSL-GCN)
-- Experimentally validated: No
+## Identifiers
 
-## Source Code
-Chen, J., Si, YW., Un, CW. et al. Chemical toxicity prediction based on semi-supervised learning and graph convolutional neural network. J Cheminform 13, 93 (2021). DOI: https://doi.org/10.1186/s13321-021-00570-8
-- Code: https://github.com/chen709847237/SSL-GCN
-- Checkpoints: https://github.com/chen709847237/SSL-GCN
+* EOS model ID: `eos69p9`
+* Slug: `ssl-gcn-tox21`
+
+## Characteristics
+
+* Input: `Compound`
+* Input Shape: `Single`
+* Task: `Classification`
+* Output: `Probability`
+* Output Type: `Float`
+* Output Shape: `List`
+* Interpretation: Probability of toxicity across 12 tasks defined in Tox21
+
+## References
+
+* [Publication](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)
+* [Source Code](https://github.com/chen709847237/SSL-GCN)
+* Ersilia contributor: [Amna-28](https://github.com/Amna-28)
+
+## Citation
+
+If you use this model, please cite the [original authors](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
 
 ## License
-The GPL-v3 covers all parts of the repository. The model uses the external library "SSL-GCN" and is located at `/model`
 
-## History
+This package is licensed under a GPL-3.0 license. The model contained within this package is licensed under a None license.
 
+Notice: Ersilia grants access to these models 'as is' provided by the original authors, please refer to the original code repository and/or publication if you use the model in your research.
 
+## About Us
+
+The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
+
+[Help us](https://www.ersilia.io/donate) achieve our mission!
