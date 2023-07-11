@@ -23,6 +23,9 @@ Toxicity prediction across the Tox21 panel from MoleculeNet, comprising 12 toxic
 * [Source Code](https://github.com/chen709847237/SSL-GCN)
 * Ersilia contributor: [Amna-28](https://github.com/Amna-28)
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos69p9)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
