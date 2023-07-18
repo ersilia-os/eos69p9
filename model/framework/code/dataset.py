@@ -44,7 +44,7 @@ class Dataset(object):
                 self.mask = label_dict['mask']
             self.valid_ids = label_dict['valid_ids'].tolist()
         else:
-            print('Processing dgl graphs from scratch...')
+            # print('Processing dgl graphs from scratch...')
             if n_jobs > 1:
                 self.graphs = pmap(smiles_to_graph,
                                    self.smiles,
@@ -54,8 +54,8 @@ class Dataset(object):
             else:
                 self.graphs = []
                 for i, s in enumerate(self.smiles):
-                    if (i + 1) % log_every == 0:
-                        print('Processing molecule {:d}/{:d}'.format(i+1, len(self)))
+                    # if (i + 1) % log_every == 0:
+                    #     print('Processing molecule {:d}/{:d}'.format(i+1, len(self)))
                     self.graphs.append(smiles_to_graph(s, node_featurizer=node_featurizer, edge_featurizer=edge_featurizer))
 
             self.valid_ids = []
@@ -120,19 +120,19 @@ class DatasetECFP4(object):
     def _pre_process(self, load, log_every, init_mask):
         if os.path.exists(self.cache_file_path) and load:
 
-            print('Loading previously saved ECFP4 fingerprint...')
+            # print('Loading previously saved ECFP4 fingerprint...')
             self.descriptors, label_dict = load_ecfp(self.cache_file_path)
             self.labels = label_dict['labels']
             if init_mask:
                 self.mask = label_dict['mask']
             self.valid_ids = label_dict['valid_ids'].tolist()
         else:
-            print('Processing ECFP4  from scratch...')
+            # print('Processing ECFP4  from scratch...')
 
             self.descriptor = []
             for i, s in enumerate(self.smiles):
-                if (i + 1) % log_every == 0:
-                    print('Processing molecule {:d}/{:d}'.format(i+1, len(self)))
+                # if (i + 1) % log_every == 0:
+                #     print('Processing molecule {:d}/{:d}'.format(i+1, len(self)))
                 self.descriptor.append([i for i in list(AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(s), nBits=2048, radius=2, useFeatures=False))])
 
             self.valid_ids = []

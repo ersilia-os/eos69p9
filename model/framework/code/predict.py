@@ -77,7 +77,7 @@ def ssl_model_predict(data_file):
     df_results = pd.read_csv(data_file, names=['SMILES'])
     for model_data_folder in model_files:
         task = model_data_folder
-        print("task :   ", task)
+        # print("task :   ", task)
 
         pretrain_folder_path = root_model_folder + model_data_folder
         #local_train_folder_path = output_data_folder + model_data_folder
@@ -141,7 +141,7 @@ def ssl_model_predict(data_file):
 if __name__ == '__main__':
     smiles_file = str(sys.argv[1])
     results_file = str(sys.argv[2])
-    print("Predicting Chemical toxicity using SSL-GCN Model")
+    # print("Predicting Chemical toxicity using SSL-GCN Model")
     
     df_results = ssl_model_predict(smiles_file)
     df_results.to_csv(results_file, index=False)
