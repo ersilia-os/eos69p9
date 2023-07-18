@@ -15,7 +15,7 @@ from utils import init_featurizer,  load_dataset, get_self_configure, mkdir_p, c
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 # remove init file from models folder, possibly created by bentoml # TODO check source of __init__.py
-_init_file = os.path.join(ROOT, "models", "__init__.py")
+_init_file = os.path.join(ROOT, "..", "..",'checkpoints', "models", "__init__.py")
 if os.path.exists(_init_file):
     os.remove(_init_file)
 
@@ -71,13 +71,13 @@ def tensor_to_list(prob_tensor):
 
 def ssl_model_predict(data_file):
     #data_folder = 'predict_data/'
-    root_model_folder = os.path.join(ROOT, 'models/')
+    root_model_folder = os.path.join(ROOT,"..","..",'checkpoints','models/')
     model_files = os.listdir(root_model_folder)
     
     df_results = pd.read_csv(data_file, names=['SMILES'])
     for model_data_folder in model_files:
         task = model_data_folder
-        print("task :   ", task)
+        # print("task :   ", task)
 
         pretrain_folder_path = root_model_folder + model_data_folder
         #local_train_folder_path = output_data_folder + model_data_folder
@@ -141,7 +141,7 @@ def ssl_model_predict(data_file):
 if __name__ == '__main__':
     smiles_file = str(sys.argv[1])
     results_file = str(sys.argv[2])
-    print("Predicting Chemical toxicity using SSL-GCN Model")
+    # print("Predicting Chemical toxicity using SSL-GCN Model")
     
     df_results = ssl_model_predict(smiles_file)
     df_results.to_csv(results_file, index=False)

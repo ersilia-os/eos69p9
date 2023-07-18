@@ -1,0 +1,1 @@
+python $1/code/predict.py $2 $3

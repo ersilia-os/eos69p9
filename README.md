@@ -25,6 +25,8 @@ Toxicity prediction across the Tox21 panel from MoleculeNet, comprising 12 toxic
 
 ## Ersilia model URLs
 * [GitHub](https://github.com/ersilia-os/eos69p9)
+* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos69p9.zip)
+* [DockerHub](https://hub.docker.com/r/ersiliaos/eos69p9) (AMD64)
 
 ## Citation
 
