@@ -1,1 +1,13 @@
 name,type,direction,description
+sr_hse,float,high,Probability of activation of the heat shock element pathway indicating cellular stress.
+nr_aromatase,float,high,Probability of inhibition of aromatase which is a key enzyme in estrogen biosynthesis
+nr_ar_lbd,float,high,Probability of binding to the androgen receptor ligand_binding domain indicating androgenic activity
+sr_atad5,float,high,Probability of DNA damage response via ATAD5 which is a marker for genomic instability
+nr_ahr,float,high,Probability of activation of the aryl hydrocarbon receptor involved in xenobiotic metabolism
+nr_er,float,high,Probability of activation of the estrogen receptor indicating estrogenic potential
+sr_mmp,float,high,Probability of mitochondrial membrane potential disruption which is a marker of early cell stress or toxicity
+sr_are,float,high,Probability of activation of antioxidant response element (ARE) linked to oxidative stress
+nr_ppar_gamma,float,high,Probability of activation of PPAR_gamma involved in fat metabolism and insulin sensitivity
+nr_er_lbd,float,high,Probability of binding to the estrogen receptor ligand_binding domain indicating estrogenic activity
+sr_p53,float,high,Probability of activation of p53 tumor suppressor pathway in response to DNA damage
+nr_ar,float,high,Probability of activation of the androgen receptor which indicates androgenic activity

@@ -52,12 +52,12 @@ def predict_prob(args, exp_config, test_set):
 
 def txt_to_df(txt_file_path, task):
     df = pd.DataFrame()
-    col3 = pd.read_csv(txt_file_path, header=None)
+    col3 = pd.read_csv(txt_file_path)
     col2 = pd.Series(np.arange(len(col3)))
     col1 = pd.Series(np.zeros(len(col3)))
     df[task] = col1.values
     df['mol_id'] = col2.values
-    df['SMILES'] = col3.values
+    df['SMILES'] = col3.iloc[:, 0] .values
     return df
 
 def tensor_to_list(prob_tensor):
@@ -74,7 +74,7 @@ def ssl_model_predict(data_file):
     root_model_folder = os.path.join(ROOT,"..","..",'checkpoints','models/')
     model_files = os.listdir(root_model_folder)
     
-    df_results = pd.read_csv(data_file, names=['SMILES'])
+    df_results = pd.read_csv(data_file)
     for model_data_folder in model_files:
         task = model_data_folder
         # print("task :   ", task)
@@ -135,13 +135,11 @@ def ssl_model_predict(data_file):
     shutil.rmtree('cache', ignore_errors=True)
     return df_results
 
-
-# MAIN 
-
 if __name__ == '__main__':
     smiles_file = str(sys.argv[1])
     results_file = str(sys.argv[2])
-    # print("Predicting Chemical toxicity using SSL-GCN Model")
-    
     df_results = ssl_model_predict(smiles_file)
+    df_results = df_results.drop(df_results.columns[0], axis=1) #drop smiles column which is automatically added
+    df_results.columns = [col.lower() for col in df_results.columns] #all col names minus
+    df_results.columns = [col.lower().replace('-', '_') for col in df_results.columns] #replace with underscores
     df_results.to_csv(results_file, index=False)

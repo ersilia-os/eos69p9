@@ -1,15 +1,16 @@
-FROM bentoml/model-server:0.11.0-py37
+FROM bentoml/model-server:0.11.0-py38
 MAINTAINER ersilia
 
-RUN pip install rdkit==2022.9.5
-RUN pip install dgl==0.5.2
-RUN pip install dgllife==0.2.6
-RUN pip install scikit-learn==0.23.2
-RUN pip install pandas==1.2.3
-RUN pip install openpyxl==3.0.7
+RUN pip install rdkit==2024.3.5
+RUN pip install dgl==2.4.0 -f https://data.dgl.ai/wheels/torch-2.1/repo.html
+RUN pip install dgllife==0.3.2
+RUN pip install openpyxl==3.1.5
 RUN pip install xgboost==1.3.3
-RUN pip install joblib==1.0.1
-RUN pip install torch==1.7.1
+RUN pip install pandas==2.0.3
+RUN pip install joblib==1.4.2
+RUN pip install packaging==25.0
+RUN pip install pyyaml==6.0.2
+RUN pip install pydantic==2.10.6
 
 WORKDIR /repo
-COPY ./repo
+COPY . /repo
