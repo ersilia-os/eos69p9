@@ -2,44 +2,87 @@
 
 Toxicity prediction across the Tox21 panel from MoleculeNet, comprising 12 toxicity pathways. The model uses the Mean Teacher Semi-Supervised Learning (MT-SSL) approach to overcome the low number of data points experimentally annotated for toxicity tasks. For the MT-SSL, Tox21 (831 compounds and 12 different endpoints) was used as labeled data and a selection of 50K compounds from other MoleculeNet datasets was used as unlabeled data.
 
-## Identifiers
+This model was incorporated on 2022-06-16.
 
-* EOS model ID: `eos69p9`
-* Slug: `ssl-gcn-tox21`
+## Information
+### Identifiers
+- **Ersilia Identifier:** `eos69p9`
+- **Slug:** `ssl-gcn-tox21`
 
-## Characteristics
+### Domain
+- **Task:** `Annotation`
+- **Subtask:** `Activity prediction`
+- **Biomedical Area:** `ADMET`
+- **Target Organism:** `Homo sapiens`
+- **Tags:** `Tox21`, `Toxicity`, `MoleculeNet`
 
-* Input: `Compound`
-* Input Shape: `Single`
-* Task: `Classification`
-* Output: `Probability`
-* Output Type: `Float`
-* Output Shape: `List`
-* Interpretation: Probability of toxicity across 12 tasks defined in Tox21
+### Input
+- **Input:** `Compound`
+- **Input Dimension:** `1`
 
-## References
+### Output
+- **Output Dimension:** `12`
+- **Output Consistency:** `Fixed`
+- **Interpretation:** Probability of toxicity across 12 tasks defined in Tox21
 
-* [Publication](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)
-* [Source Code](https://github.com/chen709847237/SSL-GCN)
-* Ersilia contributor: [Amna-28](https://github.com/Amna-28)
+Below are the **Output Columns** of the model:
+| Name | Type | Direction | Description |
+|------|------|-----------|-------------|
+| sr_hse | float | high | Probability of activation of the heat shock element pathway indicating cellular stress. |
+| nr_aromatase | float | high | Probability of inhibition of aromatase which is a key enzyme in estrogen biosynthesis |
+| nr_ar_lbd | float | high | Probability of binding to the androgen receptor ligand_binding domain indicating androgenic activity |
+| sr_atad5 | float | high | Probability of DNA damage response via ATAD5 which is a marker for genomic instability |
+| nr_ahr | float | high | Probability of activation of the aryl hydrocarbon receptor involved in xenobiotic metabolism |
+| nr_er | float | high | Probability of activation of the estrogen receptor indicating estrogenic potential |
+| sr_mmp | float | high | Probability of mitochondrial membrane potential disruption which is a marker of early cell stress or toxicity |
+| sr_are | float | high | Probability of activation of antioxidant response element (ARE) linked to oxidative stress |
+| nr_ppar_gamma | float | high | Probability of activation of PPAR_gamma involved in fat metabolism and insulin sensitivity |
+| nr_er_lbd | float | high | Probability of binding to the estrogen receptor ligand_binding domain indicating estrogenic activity |
 
-## Ersilia model URLs
-* [GitHub](https://github.com/ersilia-os/eos69p9)
-* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos69p9.zip)
-* [DockerHub](https://hub.docker.com/r/ersiliaos/eos69p9) (AMD64)
+_10 of 12 columns are shown_
+### Source and Deployment
+- **Source:** `Local`
+- **Source Type:** `External`
+- **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos69p9](https://hub.docker.com/r/ersiliaos/eos69p9)
+- **Docker Architecture:** `AMD64`
+- **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos69p9.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos69p9.zip)
 
-## Citation
+### Resource Consumption
 
-If you use this model, please cite the [original authors](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
 
-## License
+### References
+- **Source Code**: [https://github.com/chen709847237/SSL-GCN](https://github.com/chen709847237/SSL-GCN)
+- **Publication**: [https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)
+- **Publication Type:** `Peer reviewed`
+- **Publication Year:** `2021`
+- **Ersilia Contributor:** [Amna-28](https://github.com/Amna-28)
 
-This package is licensed under a GPL-3.0 license. The model contained within this package is licensed under a None license.
+### License
+This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [None](LICENSE) license.
 
-Notice: Ersilia grants access to these models 'as is' provided by the original authors, please refer to the original code repository and/or publication if you use the model in your research.
+**Notice**: Ersilia grants access to models _as is_, directly from the original authors, please refer to the original code repository and/or publication if you use the model in your research.
 
-## About Us
 
-The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
+## Use
+To use this model locally, you need to have the [Ersilia CLI](https://github.com/ersilia-os/ersilia) installed.
+The model can be **fetched** using the following command:
+```bash
+# fetch model from the Ersilia Model Hub
+ersilia fetch eos69p9
+```
+Then, you can **serve**, **run** and **close** the model as follows:
+```bash
+# serve the model
+ersilia serve eos69p9
+# generate an example file
+ersilia example -n 3 -f my_input.csv
+# run the model
+ersilia run -i my_input.csv -o my_output.csv
+# close the model
+ersilia close
+```
 
-[Help us](https://www.ersilia.io/donate) achieve our mission!
+## About Ersilia
+The [Ersilia Open Source Initiative](https://ersilia.io) is a tech non-profit organization fueling sustainable research in the Global South.
+Please [cite](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff) the Ersilia Model Hub if you've found this model to be useful. Always [let us know](https://github.com/ersilia-os/ersilia/issues) if you experience any issues while trying to run it.
+If you want to contribute to our mission, consider [donating](https://www.ersilia.io/donate) to Ersilia!
