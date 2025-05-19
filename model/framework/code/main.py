@@ -14,11 +14,6 @@ from utils import init_featurizer,  load_dataset, get_self_configure, mkdir_p, c
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
-# remove init file from models folder, possibly created by bentoml # TODO check source of __init__.py
-_init_file = os.path.join(ROOT, "..", "..",'checkpoints', "models", "__init__.py")
-if os.path.exists(_init_file):
-    os.remove(_init_file)
-
     
 def predict_prob(args, exp_config, test_set):
     exp_config.update({
@@ -72,7 +67,7 @@ def tensor_to_list(prob_tensor):
 def ssl_model_predict(data_file):
     #data_folder = 'predict_data/'
     root_model_folder = os.path.join(ROOT,"..","..",'checkpoints','models/')
-    model_files = os.listdir(root_model_folder)
+    model_files = sorted(os.listdir(root_model_folder))
     
     df_results = pd.read_csv(data_file)
     for model_data_folder in model_files:
