@@ -136,8 +136,8 @@ def ssl_model_predict(data_file):
     return df_results
 
 if __name__ == '__main__':
-    smiles_file = str(sys.argv[1])
-    results_file = str(sys.argv[2])
+    smiles_file = sys.argv[1]
+    results_file = sys.argv[2]
     df_results = ssl_model_predict(smiles_file)
     df_results = df_results.drop(df_results.columns[0], axis=1) #drop smiles column which is automatically added
     df_results.columns = [col.lower() for col in df_results.columns] #all col names minus
