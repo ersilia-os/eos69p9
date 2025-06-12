@@ -42,9 +42,13 @@
     "Incorporation Date": "2022-06-16",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos69p9.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos69p9",
-    "Docker Architecture": [
-        "AMD64"
-    ],
+    "Docker Architecture": "AMD64",
     "Model Size": 23.0,
-    "Environment Size": 6146.0
+    "Environment Size": 6146.0,
+    "Image Size": 6062.95,
+    "Computational Performance 1": 34.42,
+    "Computational Performance 2": 24.61,
+    "Computational Performance 3": 29.55,
+    "Computational Performance 4": 154.74,
+    "Computational Performance 5": 722.23
 }
