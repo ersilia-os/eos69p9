@@ -28,16 +28,16 @@ This model was incorporated on 2022-06-16.
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| sr_hse | float | high | Probability of activation of the heat shock element pathway indicating cellular stress. |
-| nr_aromatase | float | high | Probability of inhibition of aromatase which is a key enzyme in estrogen biosynthesis |
+| nr_ar | float | high | Probability of activation of the androgen receptor which indicates androgenic activity |
 | nr_ar_lbd | float | high | Probability of binding to the androgen receptor ligand_binding domain indicating androgenic activity |
-| sr_atad5 | float | high | Probability of DNA damage response via ATAD5 which is a marker for genomic instability |
 | nr_ahr | float | high | Probability of activation of the aryl hydrocarbon receptor involved in xenobiotic metabolism |
+| nr_aromatase | float | high | Probability of inhibition of aromatase which is a key enzyme in estrogen biosynthesis |
 | nr_er | float | high | Probability of activation of the estrogen receptor indicating estrogenic potential |
-| sr_mmp | float | high | Probability of mitochondrial membrane potential disruption which is a marker of early cell stress or toxicity |
-| sr_are | float | high | Probability of activation of antioxidant response element (ARE) linked to oxidative stress |
-| nr_ppar_gamma | float | high | Probability of activation of PPAR_gamma involved in fat metabolism and insulin sensitivity |
 | nr_er_lbd | float | high | Probability of binding to the estrogen receptor ligand_binding domain indicating estrogenic activity |
+| nr_ppar_gamma | float | high | Probability of activation of PPAR_gamma involved in fat metabolism and insulin sensitivity |
+| sr_are | float | high | Probability of activation of antioxidant response element (ARE) linked to oxidative stress |
+| sr_atad5 | float | high | Probability of DNA damage response via ATAD5 which is a marker for genomic instability |
+| sr_hse | float | high | Probability of activation of the heat shock element pathway indicating cellular stress. |
 
 _10 of 12 columns are shown_
 ### Source and Deployment
