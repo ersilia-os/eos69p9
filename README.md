@@ -50,7 +50,12 @@ _10 of 12 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `23`
 - **Environment Size (Mb):** `6146`
+- **Image Size (Mb):** `6062.95`
 
+**Computational Performance (seconds):**
+- 10 inputs: `34.42`
+- 100 inputs: `29.55`
+- 10000 inputs: `722.23`
 
 ### References
 - **Source Code**: [https://github.com/chen709847237/SSL-GCN](https://github.com/chen709847237/SSL-GCN)
