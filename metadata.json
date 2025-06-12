@@ -39,6 +39,7 @@
     "Source Code": "https://github.com/chen709847237/SSL-GCN",
     "License": "None",
     "Contributor": "Amna-28",
+    "Incorporation Date": "2022-06-16",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos69p9.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos69p9",
     "Docker Architecture": [
