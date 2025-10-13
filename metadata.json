@@ -15,7 +15,6 @@
         "Compound"
     ],
     "Input Dimension": 1,
-    "Input Shape": "Single",
     "Output": [
         "Score"
     ],
@@ -50,5 +49,6 @@
     "Computational Performance 2": 24.61,
     "Computational Performance 3": 29.55,
     "Computational Performance 4": 154.74,
-    "Computational Performance 5": 722.23
+    "Computational Performance 5": 722.23,
+    "Input Shape": "Single"
 }
