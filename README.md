@@ -2,8 +2,7 @@
 
 Toxicity prediction across the Tox21 panel from MoleculeNet, comprising 12 toxicity pathways. The model uses the Mean Teacher Semi-Supervised Learning (MT-SSL) approach to overcome the low number of data points experimentally annotated for toxicity tasks. For the MT-SSL, Tox21 (831 compounds and 12 different endpoints) was used as labeled data and a selection of 50K compounds from other MoleculeNet datasets was used as unlabeled data.
 
-This model was incorporated on 2022-06-16.
-
+This model was incorporated on 2022-06-16.Last packaged on 2025-10-13.
 
 ## Information
 ### Identifiers
@@ -51,12 +50,12 @@ _10 of 12 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `23`
 - **Environment Size (Mb):** `6148`
-- **Image Size (Mb):** `6062.95`
+- **Image Size (Mb):** `6080.13`
 
 **Computational Performance (seconds):**
-- 10 inputs: `34.42`
-- 100 inputs: `29.55`
-- 10000 inputs: `722.23`
+- 10 inputs: `30.11`
+- 100 inputs: `22.59`
+- 10000 inputs: `284.36`
 
 ### References
 - **Source Code**: [https://github.com/chen709847237/SSL-GCN](https://github.com/chen709847237/SSL-GCN)
