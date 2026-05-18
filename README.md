@@ -59,7 +59,7 @@ _10 of 12 columns are shown_
 
 ### References
 - **Source Code**: [https://github.com/chen709847237/SSL-GCN](https://github.com/chen709847237/SSL-GCN)
-- **Publication**: [https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00570-8)
+- **Publication**: [https://doi.org/10.1186/s13321-021-00570-8](https://doi.org/10.1186/s13321-021-00570-8)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2021`
 - **Ersilia Contributor:** [Amna-28](https://github.com/Amna-28)
