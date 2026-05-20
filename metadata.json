@@ -44,7 +44,7 @@
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos69p9",
     "Docker Architecture": "AMD64",
     "Model Size": 23.0,
-    "Environment Size": 6148.0,
+    "Environment Size": 6130.0,
     "Image Size": 6080.13,
     "Computational Performance 1": 30.11,
     "Computational Performance 2": 20.05,
