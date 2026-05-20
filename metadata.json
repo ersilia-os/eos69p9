@@ -23,8 +23,7 @@
     "Interpretation": "Probability of toxicity across 12 tasks defined in Tox21",
     "Tag": [
         "Tox21",
-        "Toxicity",
-        "MoleculeNet"
+        "Toxicity"
     ],
     "Biomedical Area": [
         "ADMET"
