@@ -1,6 +1,6 @@
 # Toxicity prediction across the Tox21 panel with semi-supervised learning
 
-Toxicity prediction across the Tox21 panel from MoleculeNet, comprising 12 toxicity pathways. The model uses the Mean Teacher Semi-Supervised Learning (MT-SSL) approach to overcome the low number of data points experimentally annotated for toxicity tasks. For the MT-SSL, Tox21 (831 compounds and 12 different endpoints) was used as labeled data and a selection of 50K compounds from other MoleculeNet datasets was used as unlabeled data.
+Reports activity across the twelve Tox21 pathways using a graph convolutional network trained semi-supervised, so that unlabelled molecules contribute to learning alongside assayed ones. Chen and colleagues adopted this arrangement because toxicity labels are scarce relative to available structures, and showed it improves on purely supervised training. The twelve nuclear receptor and stress response readouts remain heavily skewed towards inactives, so positive predictions carry more information than negative ones.
 
 This model was incorporated on 2022-06-16.Last packaged on 2026-05-20.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2022-06-16.Last packaged on 2026-05-20.
 ### Output
 - **Output Dimension:** `12`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability of toxicity across 12 tasks defined in Tox21
+- **Interpretation:** Probability of activity in each of the twelve Tox21 toxicity pathways.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
