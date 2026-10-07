@@ -1,6 +1,6 @@
 # Toxicity prediction across the Tox21 panel with semi-supervised learning
 
-Reports activity across the twelve Tox21 pathways using a graph convolutional network trained semi-supervised, so that unlabelled molecules contribute to learning alongside assayed ones. Chen and colleagues adopted this arrangement because toxicity labels are scarce relative to available structures, and showed it improves on purely supervised training. The twelve nuclear receptor and stress response readouts remain heavily skewed towards inactives, so positive predictions carry more information than negative ones.
+Reports activity across the twelve Tox21 endpoints, seven nuclear receptor signals and five stress response pathways, using a graph convolutional network trained with the Mean Teacher semi-supervised algorithm. Chen and colleagues paired the 7,831 labelled Tox21 compounds from MoleculeNet with some 50,000 unlabelled structures taken from ClinTox, SIDER, ToxCast and HIV, raising the average test ROC-AUC to 0.757. The endpoints are heavily skewed towards inactives, so a positive call carries more information than a negative one.
 
 This model was incorporated on 2022-06-16.Last packaged on 2026-05-20.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2022-06-16.Last packaged on 2026-05-20.
 ### Output
 - **Output Dimension:** `12`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability of activity in each of the twelve Tox21 toxicity pathways.
+- **Interpretation:** Probability of activity in each of twelve Tox21 nuclear receptor and stress response toxicity assays.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
