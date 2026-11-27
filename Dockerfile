@@ -1,8 +1,9 @@
 FROM bentoml/model-server:0.11.0-py38
 MAINTAINER ersilia
 
+RUN conda install -c dglteam/label/th21_cpu dgl=2.4.0 -y
 RUN pip install rdkit==2024.3.5
-RUN pip install dgl==2.4.0 -f https://data.dgl.ai/wheels/torch-2.1/repo.html
+RUN pip install torch==2.4.0
 RUN pip install dgllife==0.3.2
 RUN pip install openpyxl==3.1.5
 RUN pip install xgboost==1.3.3

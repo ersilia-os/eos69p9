@@ -9,6 +9,7 @@ from argparse import ArgumentParser
 from torch.utils.data import DataLoader
 from sklearn.metrics import roc_auc_score
 import shutil
+import tempfile
 import sys
 from utils import init_featurizer,  load_dataset, get_self_configure, mkdir_p, collate_molgraphs, load_model, predict, data_unpack, load_ecfp_dataset
 
@@ -70,6 +71,8 @@ def ssl_model_predict(data_file):
     model_files = sorted(os.listdir(root_model_folder))
     
     df_results = pd.read_csv(data_file)
+    # graph cache goes to a fresh temp dir: the working directory may be read-only (e.g. Apptainer)
+    cache_dir = tempfile.mkdtemp()
     for model_data_folder in model_files:
         task = model_data_folder
         # print("task :   ", task)
@@ -78,7 +81,7 @@ def ssl_model_predict(data_file):
         #local_train_folder_path = output_data_folder + model_data_folder
 
         args = {'csv_path': data_file,
-                    'cache_path': 'cache/' + task,
+                    'cache_path': os.path.join(cache_dir, task),
                     'task_names': task,
                     'smiles_column': 'SMILES',
                     'model': 'GCN',
@@ -127,7 +130,7 @@ def ssl_model_predict(data_file):
         prob_list = tensor_to_list(prob_tensor)
         result  = pd.Series(prob_list, name = task)
         df_results[task] = result
-    shutil.rmtree('cache', ignore_errors=True)
+    shutil.rmtree(cache_dir, ignore_errors=True)
     return df_results
 
 if __name__ == '__main__':
