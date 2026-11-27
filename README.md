@@ -2,7 +2,8 @@
 
 Reports activity across the twelve Tox21 endpoints, seven nuclear receptor signals and five stress response pathways, using a graph convolutional network trained with the Mean Teacher semi-supervised algorithm. Chen and colleagues paired the 7,831 labelled Tox21 compounds from MoleculeNet with some 50,000 unlabelled structures taken from ClinTox, SIDER, ToxCast and HIV, raising the average test ROC-AUC to 0.757. The endpoints are heavily skewed towards inactives, so a positive call carries more information than a negative one.
 
-This model was incorporated on 2022-06-16.Last packaged on 2026-05-20.
+This model was incorporated on 2022-06-16.
+Last packaged on 2026-05-20.
 
 ## Information
 ### Identifiers
