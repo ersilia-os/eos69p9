@@ -3,7 +3,7 @@
 Reports activity across the twelve Tox21 endpoints, seven nuclear receptor signals and five stress response pathways, using a graph convolutional network trained with the Mean Teacher semi-supervised algorithm. Chen and colleagues paired the 7,831 labelled Tox21 compounds from MoleculeNet with some 50,000 unlabelled structures taken from ClinTox, SIDER, ToxCast and HIV, raising the average test ROC-AUC to 0.757. The endpoints are heavily skewed towards inactives, so a positive call carries more information than a negative one.
 
 This model was incorporated on 2022-06-16.
-Last packaged on 2026-05-20.
+Last packaged on 2026-11-27.
 
 ## Information
 ### Identifiers
@@ -51,12 +51,12 @@ _10 of 12 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `23`
 - **Environment Size (Mb):** `6150`
-- **Image Size (Mb):** `6085.54`
+- **Image Size (Mb):** `3201.71`
 
 **Computational Performance (seconds):**
-- 10 inputs: `27.25`
-- 100 inputs: `19.49`
-- 10000 inputs: `294.15`
+- 10 inputs: `25.82`
+- 100 inputs: `17.85`
+- 10000 inputs: `252.32`
 
 ### References
 - **Source Code**: [https://github.com/chen709847237/SSL-GCN](https://github.com/chen709847237/SSL-GCN)
