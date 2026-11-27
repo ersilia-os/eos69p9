@@ -55,9 +55,9 @@ _10 of 12 columns are shown_
 - **Image Size (Mb):** `3201.71`
 
 **Computational Performance (seconds):**
-- 10 inputs: `25.82`
-- 100 inputs: `17.85`
-- 10000 inputs: `252.32`
+- 10 inputs: `26.43`
+- 100 inputs: `17.41`
+- 10000 inputs: `236.72`
 
 ### References
 - **Source Code**: [https://github.com/chen709847237/SSL-GCN](https://github.com/chen709847237/SSL-GCN)
