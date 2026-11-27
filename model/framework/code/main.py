@@ -99,10 +99,10 @@ def ssl_model_predict(data_file):
                     'bond_featurizer_type': 'canonical'
                   }
         args = init_featurizer(args)
-        if torch.cuda.is_available():
-            args['device'] = torch.device(args['cuda_define'])
-        else:
-            args['device'] = torch.device('cpu')
+        # always run on CPU: the GPU branch read args['cuda_define'], which is never set,
+        # so the model crashed with KeyError whenever a GPU was visible; the DGL build
+        # installed for this model is CPU-only as well
+        args['device'] = torch.device('cpu')
 
         if args['task_names'] is not None:
             args['task_names'] = args['task_names'].split(',')
